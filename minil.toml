@@ -1,0 +1,4 @@
+name = "My-Test-Repo"
+# badges = ["travis"]
+module_maker="ModuleBuildTiny"
+
