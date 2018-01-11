@@ -1,6 +1,6 @@
 # NAME
 
-My::Test::Repo - Homebrew repo for testing repositories
+My::Test::Repo - Test repositories with assignments
 
 # SYNOPSIS
 
@@ -8,8 +8,13 @@ My::Test::Repo - Homebrew repo for testing repositories
 
 # DESCRIPTION
 
-My::Test::Repo is a module that helps with evaluating whether a repository with an assignment follows the requirements in the guide. These requirements might include the deployment of applications to the cloud, too.
+My::Test::Repo is ...
 
+# INTERFACE
+
+## new $url
+
+Instantiates a test class.
 
 # LICENSE
 
