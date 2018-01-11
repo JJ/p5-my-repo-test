@@ -12,7 +12,7 @@ sub new {
   my $class = shift;
   my $url_repo = shift;
   my $tester = __PACKAGE__->builder;
-  my ($user,$name) = ($url_repo=~ m{/(\S+)/(.+)$});
+  my ($user,$name) = ($url_repo=~ m{/([^/]+)/([^/]+)$});
   my $repo_dir = "/tmp/$user-$name";
   if (!(-e $repo_dir) or  !(-d $repo_dir) ) {
     mkdir($repo_dir);
