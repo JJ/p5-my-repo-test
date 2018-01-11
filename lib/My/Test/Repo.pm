@@ -18,7 +18,7 @@ sub new {
   my $repo_dir = "/tmp/$user-$name";
   if (!(-e $repo_dir) or  !(-d $repo_dir) ) {
     mkdir($repo_dir);
-    Git::command_oneline("clone $url_repo $repo_dir");
+    Git::command("clone", "$url_repo", "$repo_dir");
   }
 
   # Get README.md
