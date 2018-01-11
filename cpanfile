@@ -7,6 +7,6 @@ requires 'Git';
 requires 'File::Slurper';
 requires 'JSON';
 requires 'Net::Ping';
-requires 'TAP::Formatter::Color'
+requires 'TAP::Formatter::Color';
 requires 'Term::ANSIColor';
 

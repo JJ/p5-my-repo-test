@@ -7,6 +7,7 @@ use version; our $VERSION = "0.0.1";
 
 use base 'Test::Builder::Module'; # Included in Test::Simple
 use Git;
+use File::Slurper qw(read_text);
 
 # Module implementation here
 sub new {
@@ -19,13 +20,24 @@ sub new {
     mkdir($repo_dir);
     Git::command_oneline("clone $url_repo $repo_dir");
   }
+
+  # Get README.md
+  my $README;
+  if ( -r "$repo_dir/README.md" ) {
+    $README =  read_text( "$repo_dir/README.md");
+  }
   my $self = { _url => $url_repo,	       
-	      _t => $tester
+	       _t => $tester,
+	       _readme => $README
 	     };
   bless  $self, $class;
   return $self;
 }
 
+sub has_readme (){
+  my $self = shift;
+  return $self->{'_t'}->ok( $self->{'_readme'}, "Can haz README.md");
+}
 
 1;
 __END__
