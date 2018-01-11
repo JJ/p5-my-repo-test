@@ -3,8 +3,9 @@ use 5.008001;
 use strict;
 use warnings;
 
-our $VERSION = "0.01";
+our $VERSION = "0.0.1";
 
+use base 'Test::Builder::Module'; # Included in Test::Simple
 
 
 1;
@@ -14,7 +15,7 @@ __END__
 
 =head1 NAME
 
-My::Test::Repo - It's new $module
+My::Test::Repo - Test repositories with assignments
 
 =head1 SYNOPSIS
 
