@@ -6,6 +6,7 @@ use warnings;
 use version; our $VERSION = "0.0.1";
 
 use base 'Test::Builder::Module'; # Included in Test::Simple
+use Git;
 
 # Module implementation here
 sub new {
@@ -16,10 +17,9 @@ sub new {
   my $repo_dir = "/tmp/$user-$name";
   if (!(-e $repo_dir) or  !(-d $repo_dir) ) {
     mkdir($repo_dir);
-    `git clone $url_repo $repo_dir`;
+    Git::command_oneline("clone $url_repo $repo_dir");
   }
-  my $self = { _url => $url_repo,
-	       
+  my $self = { _url => $url_repo,	       
 	      _t => $tester
 	     };
   bless  $self, $class;
